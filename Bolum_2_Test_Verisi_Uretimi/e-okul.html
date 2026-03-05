@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>2025-2026 I. Dönem Puan Çizelgesi</title>
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:20px;
+}
+
+.page{
+    width:100%;
+    margin-bottom:40px;
+}
+
+@media print{
+    .page{
+        page-break-before: always;
+    }
+    .page:first-child{
+        page-break-before: auto;
+    }
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.info-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:10px;
+}
+
+.info-table td{
+    padding:3px 5px;
+}
+
+.main-table{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+}
+
+.main-table th,
+.main-table td{
+    border:1px solid #000;
+    text-align:center;
+    font-size:12px;
+    padding:4px;
+}
+
+.vertical{
+    writing-mode:vertical-rl;
+    transform: rotate(180deg);
+    white-space:nowrap;
+}
+
+.small{
+    font-size:11px;
+}
+
+.left{
+    text-align:left;
+}
+
+</style>
+</head>
+<body>
+
+<!-- SAYFA 1 -->
+<div class="page">
+<h2>2025-2026 I. DÖNEM PUAN ÇİZELGESİ</h2>
+
+<table class="info-table">
+<tr><td><b>Okul / Kurum Adı</b></td><td>: ÖRNEK MESLEKİ VE TEKNİK ANADOLU LİSESİ</td></tr>
+<tr><td><b>Ders Yılı</b></td><td>: 2025-2026</td></tr>
+<tr><td><b>Alanı / Dalı</b></td><td>: BİLİŞİM TEKNOLOJİLERİ ALANI / DAL YOK</td></tr>
+<tr><td><b>Sınıf / Şubesi</b></td><td>: AMP - 9. Sınıf / B Şubesi</td></tr>
+<tr><td><b>Dersin Adı</b></td><td>: BEDEN EĞİTİMİ VE SPOR / GÖRSEL SANATLAR / MÜZİK</td></tr>
+<tr><td><b>Haftalık Ders Saati</b></td><td>: 2 Saat</td></tr>
+</table>
+
+<table class="main-table">
+<tr>
+<th rowspan="3" class="vertical">Sıra No</th>
+<th colspan="2">ÖĞRENCİNİN</th>
+<th colspan="13">SINAVLAR</th>
+<th rowspan="3">PROJE</th>
+<th rowspan="3">Muaf</th>
+<th rowspan="3">PUANI</th>
+</tr>
+
+<tr>
+<th rowspan="2">Okul Numarası</th>
+<th rowspan="2">Adı Soyadı</th>
+<th colspan="6">YAZILI</th>
+<th colspan="3">PERFORMANS</th>
+<th colspan="3">UYGULAMA</th>
+<th rowspan="2">OS</th>
+</tr>
+
+<tr class="small">
+<th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th><th>Y6</th>
+<th>P1</th><th>P2</th><th>P3</th>
+<th>U1</th><th>U2</th><th>U3</th>
+</tr>
+
+<!-- 10 Öğrenci -->
+<tbody>
+<script>
+const students = [
+["101","Ahmet Yılmaz"],
+["102","Ayşe Demir"],
+["103","Mehmet Kaya"],
+["104","Zeynep Çelik"],
+["105","Ali Şahin"],
+["106","Elif Aydın"],
+["107","Mustafa Arslan"],
+["108","Fatma Koç"],
+["109","Emre Kurt"],
+["110","Merve Özkan"]
+];
+
+students.forEach((s,i)=>{
+document.write(`
+<tr>
+<td>${i+1}</td>
+<td>${s[0]}</td>
+<td class="left">${s[1]}</td>
+<td>70</td><td>75</td><td></td><td></td><td></td><td></td>
+<td>85</td><td>90</td><td></td>
+<td></td><td></td><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>80</td>
+</tr>
+`);
+});
+</script>
+</tbody>
+</table>
+</div>
+
+
+<!-- SAYFA 2 -->
+<div class="page">
+<h2>2025-2026 I. DÖNEM PUAN ÇİZELGESİ</h2>
+<table class="info-table">
+<tr><td><b>Okul / Kurum Adı</b></td><td>: ÖRNEK MESLEKİ VE TEKNİK ANADOLU LİSESİ</td></tr>
+<tr><td><b>Ders Yılı</b></td><td>: 2025-2026</td></tr>
+<tr><td><b>Alanı / Dalı</b></td><td>: BİLİŞİM TEKNOLOJİLERİ ALANI / DAL YOK</td></tr>
+<tr><td><b>Sınıf / Şubesi</b></td><td>: AMP - 9. Sınıf / B Şubesi</td></tr>
+<tr><td><b>Dersin Adı</b></td><td>: BİLGİSAYARLI TASARIM</td></tr>
+<tr><td><b>Haftalık Ders Saati</b></td><td>: 2 Saat</td></tr>
+</table>
+
+<table class="main-table">
+<tr>
+<th rowspan="3" class="vertical">Sıra No</th>
+<th colspan="2">ÖĞRENCİNİN</th>
+<th colspan="13">SINAVLAR</th>
+<th rowspan="3">PROJE</th>
+<th rowspan="3">Muaf</th>
+<th rowspan="3">PUANI</th>
+</tr>
+<tr>
+<th rowspan="2">Okul Numarası</th>
+<th rowspan="2">Adı Soyadı</th>
+<th colspan="6">YAZILI</th>
+<th colspan="3">PERFORMANS</th>
+<th colspan="3">UYGULAMA</th>
+<th rowspan="2">OS</th>
+</tr>
+<tr class="small">
+<th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th><th>Y6</th>
+<th>P1</th><th>P2</th><th>P3</th>
+<th>U1</th><th>U2</th><th>U3</th>
+</tr>
+<tbody>
+<script>
+students.forEach((s,i)=>{
+document.write(`
+<tr>
+<td>${i+1}</td>
+<td>${s[0]}</td>
+<td class="left">${s[1]}</td>
+<td>65</td><td>80</td><td></td><td></td><td></td><td></td>
+<td>88</td><td>92</td><td></td>
+<td></td><td></td><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>85</td>
+</tr>
+`);
+});
+</script>
+</tbody>
+</table>
+</div>
+
+
+<!-- SAYFA 3 -->
+<div class="page">
+<h2>2025-2026 I. DÖNEM PUAN ÇİZELGESİ</h2>
+<table class="info-table">
+<tr><td><b>Okul / Kurum Adı</b></td><td>: ÖRNEK MESLEKİ VE TEKNİK ANADOLU LİSESİ</td></tr>
+<tr><td><b>Ders Yılı</b></td><td>: 2025-2026</td></tr>
+<tr><td><b>Alanı / Dalı</b></td><td>: BİLİŞİM TEKNOLOJİLERİ ALANI / DAL YOK</td></tr>
+<tr><td><b>Sınıf / Şubesi</b></td><td>: AMP - 9. Sınıf / B Şubesi</td></tr>
+<tr><td><b>Dersin Adı</b></td><td>: MATEMATİK</td></tr>
+<tr><td><b>Haftalık Ders Saati</b></td><td>: 6 Saat</td></tr>
+</table>
+
+<table class="main-table">
+<tr>
+<th rowspan="3" class="vertical">Sıra No</th>
+<th colspan="2">ÖĞRENCİNİN</th>
+<th colspan="13">SINAVLAR</th>
+<th rowspan="3">PROJE</th>
+<th rowspan="3">Muaf</th>
+<th rowspan="3">PUANI</th>
+</tr>
+<tr>
+<th rowspan="2">Okul Numarası</th>
+<th rowspan="2">Adı Soyadı</th>
+<th colspan="6">YAZILI</th>
+<th colspan="3">PERFORMANS</th>
+<th colspan="3">UYGULAMA</th>
+<th rowspan="2">OS</th>
+</tr>
+<tr class="small">
+<th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th><th>Y6</th>
+<th>P1</th><th>P2</th><th>P3</th>
+<th>U1</th><th>U2</th><th>U3</th>
+</tr>
+<tbody>
+<script>
+students.forEach((s,i)=>{
+document.write(`
+<tr>
+<td>${i+1}</td>
+<td>${s[0]}</td>
+<td class="left">${s[1]}</td>
+<td>55</td><td>70</td><td></td><td></td><td></td><td></td>
+<td>75</td><td>78</td><td></td>
+<td></td><td></td><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>68</td>
+</tr>
+`);
+});
+</script>
+</tbody>
+</table>
+</div>
+
+</body>
+</html>
