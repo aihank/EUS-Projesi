@@ -1,0 +1,11 @@
+Ekteki e-okul not çizelgesi ekran görüntüsünün tasarımını birebir kopyalayan bir HTML/CSS kodu yazar mısın? KVKK gereği test verisi oluşturmam lazım.
+
+Şartlar:
+
+Tablo yapısı, çizgiler, hücre birleştirmeleri ve 'Sıra No' gibi dikey yazılar resimdekiyle tamamen aynı olsun (Çizgiler PDF çıktısı için border: 1px solid black olmalı).
+
+Tablo içine 101, 102 numaralı Ahmet, Ayşe gibi rastgele Türk isimleriyle, Y1, Y2, P1, P2 notları dolu olacak şekilde 2 satır örnek veri gir. (Örnek veriler 10 öğrenci için olsun)
+
+Bu yapıdan toplam 3 sayfa üret (sayfaları div ile ayır). Her sayfa arasına yazdırırken sayfa atlaması için CSS'e @media print { page-break-before: always; } ayarını ekle.
+
+1. ve 2. sayfanın ders adı 'BİLGİSAYARLI TASARIM', 3. sayfanın ders adı 'MATEMATİK' olsun.
