@@ -1,0 +1,13 @@
+Yüklediğim Test PDF'imizi kontrol eder misin?Bu pdf'i Python ile okuyup verileri tekilleştiren bir fonksiyona ihtiyacım var. pdfplumber kütüphanesini kullanabilirsin.
+
+Şunlara dikkat etmeliyiz:
+
+Tablo çizgilerini düzgün okuması için table_settings parametresinde yatay ve dikey çizgileri (lines) baz almasını söyle.
+
+PDF'in her sayfasının başındaki "Sınıfı / Şubesi :" ve "Dersin Adı :" kısımlarını regex (veya benzeri bir yöntemle) çek.
+
+Çok Önemli (E-okul Hatası Önlemi): Bir sınıfın bir dersini okuduğunda onu bir set() içinde hafızaya al. Eğer sonraki sayfalarda aynı dersi tekrar görürse, o sayfayı okumadan atlasın.
+
+Farklı PDF motorlarında "Sıra No" sütunu bazen 0. indekse bazen 1. indekse kayabiliyor. Satırın 0. indeksinde mi yoksa 1. indeksinde mi sayı olduğunu kontrol eden dinamik bir sütun bulucu mantığı ekle.
+
+Verilerdeki 'G' (Girmedi) harfini not ortalamasını etkilemesi için 0.0'a çevir. Sonuçları sözlük (dict) listesi olarak döndür.
