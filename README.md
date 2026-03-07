@@ -22,7 +22,7 @@ Gerçek öğrenci verilerini tehlikeye atmamak (KVKK uyumu) için yapay zeka yar
 
 
 
-🔒 Bölüm 3: Python ile PDF Madenciliği (2 Gün Sonra Burada!)
+📁 Bölüm 3: Python ile PDF Madenciliği (YAYINDA!)
 
 
 
@@ -55,4 +55,5 @@ Bölüm 2 İçin: Bolum\_2\_Test\_Verisi\_Uretimi klasöründeki .html dosyasın
 
 
 💡 Not: Bu proje eğitim amaçlıdır. Lütfen gerçek öğrenci verileriyle çalışırken KVKK (Kişisel Verilerin Korunması Kanunu) kurallarına azami özen gösteriniz.
+
 
