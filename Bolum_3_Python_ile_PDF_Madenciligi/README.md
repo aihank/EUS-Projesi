@@ -21,4 +21,4 @@ Kodu çalıştıracağınız dizinde veri_pdf adında bir klasör oluşturun (ve
 
 Test PDF'lerinizi o klasörün içine atın ve Python dosyasını çalıştırın!
 
-python eokul_kusursuz_okuyucu.py
+python pdf_okuyucu_final.py
