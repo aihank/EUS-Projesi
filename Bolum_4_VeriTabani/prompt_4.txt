@@ -1,0 +1,23 @@
+Bir Okul Erken Uyarı Sistemi yapıyorum. Veritabanı inşası ile veri ekleme işlemlerini birbirinden ayırmak için bana 2 ayrı Python dosyası kodu yazmanı istiyorum.
+
+Dosya 1: 1_veritabani_kur.py
+Aşağıdaki tablo mimarisine göre okul_verisi.db oluştur:
+
+roller: id (PK), rol_adi
+
+kullanicilar: id (PK), kullanici_adi, sifre_hash, rol_id (FK)
+
+siniflar: id (PK), sinif_adi UNIQUE, rehber_ogretmen_id (FK)
+
+ogrenciler: okul_no (PK Text), ad_soyad, sinif_id (FK)
+
+notlar: id (PK), okul_no (FK), ders_adi, donem TEXT, y1, y2, y3, y4, y5, os, p1, p2, p3, u1, u2, u3, proje, muaf, ortalama, tarih (DEFAULT CURRENT_TIMESTAMP). ÖNEMLİ: (okul_no, ders_adi, donem) üçlüsü UNIQUE olmalı!
+
+devamsizlik: id (PK), okul_no (FK), donem TEXT, mazeretli, mazeretsiz, toplam, tarih (DEFAULT CURRENT_TIMESTAMP). (Not: Devamsızlıkta trend analizi yapacağımız için UNIQUE kısıtlaması OLMAYACAK, her seferinde yeni satır eklenecek).
+
+Dosya 2: 2_veri_aktarimi.py
+Bu dosyada sadece veri ekleme/güncelleme fonksiyonları olsun:
+1- sinif_ekle_ve_id_al(sinif_adi): INSERT OR IGNORE kullanıp id döndürsün.
+2- ogrenci_ekle(okul_no, ad_soyad, sinif_id): INSERT OR IGNORE kullansın.
+3- not_ekle(okul_no, ders_adi, donem, y1...ortalama): Aynı öğrencinin aynı dönemdeki aynı ders notu tekrar gelirse alt alta eklemesin, notları güncellesin. Bu yüzden INSERT OR REPLACE kullansın.
+SQL Injection'a karşı (?) kullan.
