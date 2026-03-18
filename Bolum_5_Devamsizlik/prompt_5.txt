@@ -1,0 +1,11 @@
+Python 'pandas' ve 'sqlite3' kullanarak E-okul'dan inen bozuk bir 'devamsizlik.XLS' dosyasını okuyup veritabanına ekleyeceğim. Lütfen şu şartlara harfiyen uy:
+
+Sahte Excel Koruması: Dosyalar uzantısı gizlenmiş HTML veya CSV olabiliyor. Bu yüzden okurken try-except bloğu kullan. Önce read_excel, sonra read_html, en son read_csv dene.
+
+Hafıza Mantığı (State Machine): E-okul'da veriler tek satırda değil! Sütun başlıklarına güvenme, satır satır döngü kur. index + 1 gibi sabit satır atlama komutları KULLANMA.
+
+Önce satırın ilk 3 hücresinde re kütüphanesiyle '101' veya '101.0' formatında bir öğrenci numarası ara. Bulursan onu küsuratsız olarak mevcut_okul_no değişkeninde hafızaya al.
+
+Kritik Kısım: Asıl veriler hemen alt satırda OLMAYABİLİR! Öğrenci numarasının bulunduğu satır ile 'Toplamlar:' satırı arasına öğrencinin 1. veya 2. dönemlerini gösteren birden fazla satır girebilir. Araya giren bu dönem satırlarını atla. Döngü ilerleyip içinde 'Toplamlar:' yazan bir satıra gelirse (Dikkat: Bu satırda '* Devamsızlıktan Başarısız' da yazıyor olabilir, bu satırı SAKIN atlama), bu satırdaki ondalıklı sayıları (float) bul. İlk 3 sayıyı sırasıyla mazeretsiz, mazeretli ve toplam devamsızlık olarak al.
+
+okul_verisi.db içindeki devamsizlik tablosuna (Trend analizi için alt alta) ekle. donem bilgisini '2025-2026 GÜNCEL' olarak sabit ver. Sadece sistemde kayıtlı numaraları ekle.
