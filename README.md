@@ -29,13 +29,9 @@ Gerçek öğrenci verilerini tehlikeye atmamak (KVKK uyumu) için yapay zeka yar
 pdfplumber kullanarak PDF'lerdeki notları, sütun kaymalarına bağışıklı bir şekilde (Regex ile) çeken kusursuz Python kodları.
 
 
+📁 Bölüm 4: Sistemin Beyni - SQLite Veritabanı (YAYINDA!)
 
-🔒 Bölüm 4: Sistemin Beyni - SQLite Veritabanı (Yakında)
-
-
-
-Çekilen verilerin okul\_verisi.db içine ilişkisel tablolarla yazılması.
-
+Çekilen verilerin okul_verisi.db içine ilişkisel tablolarla, "INSERT OR REPLACE" (Snapshot) mantığı kullanılarak yazılması.
 
 
 🔒 Bölüm 5: Devamsızlık Analizi ve Excel Okuma (Yakında)
