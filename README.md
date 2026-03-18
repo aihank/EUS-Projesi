@@ -34,21 +34,23 @@ pdfplumber kullanarak PDF'lerdeki notları, sütun kaymalarına bağışıklı b
 Çekilen verilerin okul_verisi.db içine ilişkisel tablolarla, "INSERT OR REPLACE" (Snapshot) mantığı kullanılarak yazılması.
 
 
-🔒 Bölüm 5: Devamsızlık Analizi ve Excel Okuma (Yakında)
+📁 Bölüm 5: Devamsızlık Analizi ve Excel Okuma (YAYINDA!)
 
+Devamsızlık için .xls dosyalarını Pandas ile okuma, Regex ile çöp verileri temizleme ve devamsızlıkları "Trend Analizi" (Time-Series) mantığıyla veritabanına kaydetme. (Not: Videoda bahsedilen mazeretli/mazeretsiz ters yazım hatası buradaki kodlarda giderilmiştir.)
 
+🔒 Bölüm 6: Risk Algoritması ve Yetkilendirme (Yakında)
 
-Bozuk E-Okul Excel (.xls) dosyalarından anlamsal parser (Semantic Parse) ile veri çekme.
-
-
+Not ve devamsızlık verilerinin birleştirilip "Erken Uyarı Risk Puanı" hesaplanması.
 
 ⚙️ Nasıl Çalıştırılır?
-
 
 
 Bölüm 2 İçin: Bolum\_2\_Test\_Verisi\_Uretimi klasöründeki .html dosyasını tarayıcınızda (Chrome/Edge) açın ve CTRL + P (Yazdır) diyerek "PDF Olarak Kaydet" seçeneğiyle kendi test verilerinizi üretin. 3. Bölümdeki Python kodları için bu PDF'leri kullanacağız!
 
 
+Projeyi bilgisayarınızda çalıştırmak için gerekli kütüphaneleri kurmanız gerekmektedir. Terminalinize aşağıdaki komutu yazın:
+
+pip install pdfplumber pandas openpyxl lxml
 
 💡 Not: Bu proje eğitim amaçlıdır. Lütfen gerçek öğrenci verileriyle çalışırken KVKK (Kişisel Verilerin Korunması Kanunu) kurallarına azami özen gösteriniz.
 
