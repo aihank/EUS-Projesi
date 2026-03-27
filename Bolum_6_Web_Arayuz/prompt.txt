@@ -1,0 +1,33 @@
+Python Flask ve SQLite3 kullanarak 'okul_verisi.db' için güvenli ve yetkilendirmeli bir web arayüzü yaz. Şifreleme için 'werkzeug.security' kullan. Terminal dizini karışıklığını önlemek için veritabanı yolunu os.path.abspath ile dinamik belirle.
+
+Veritabanı Şemam Şöyle (Buna göre kod yaz):
+
+roller: id, rol_adi
+
+kullanicilar: id, kullanici_adi, sifre_hash, rol_id
+
+siniflar: id, sinif_adi, rehber_ogretmen_id
+
+ogrenciler: okul_no (PK), ad_soyad, sinif_id
+
+notlar: id, okul_no, ders_adi, donem, ortalama
+
+devamsizlik: id, okul_no, donem, mazeretli, mazeretsiz, toplam
+
+Bana şu 3 dosyayı ver:
+
+app.py (Backend):
+
+Flask session ile oturum yönetimi yap. Gizli anahtar belirle.
+
+Uygulama başlarken veritabanını kontrol etsin; boşsa 3 Rol ('Admin', 'Rehberlik', 'Sınıf Öğretmeni') ve bu rollere ait 3 kullanıcı eklesin (kullanıcı adları: admin, rehberlik, ogretmen | hepsinin şifresi: 1234).
+
+/login route'unda kullanıcıyı doğrularken JOIN kullanarak 'rol_adi' bilgisini de çeksin ve session['rol'] içine kaydetsin.
+
+/ route'unda sadece giriş yapmış olanlar 'ogrenciler', 'siniflar', 'notlar', 'devamsizlik' tablolarını birleştirip (ogrenciler tablosundaki okul_no ve ad_soyad'a göre GROUP BY yaparak ortalama ve devamsizlik.toplam değerlerini alıp) template'e göndersin.
+
+/logout route'u olsun.
+
+templates/login.html: Tailwind CSS ile tasarlanmış şık, koyu tema giriş ekranı. Hata mesajlarını göstersin.
+
+templates/index.html: Tailwind CSS ile tasarlanmış Dashboard. Sol veya üst menüde 'Öğrenciler', 'Not Yükle', 'Devamsızlık Yükle' butonları olsun. Ancak 'Not Yükle' ve 'Devamsızlık Yükle' butonlarını sadece Jinja2 ile session.rol == 'Admin' olanlar görebilsin! Tabloda da öğrencileri listele.
