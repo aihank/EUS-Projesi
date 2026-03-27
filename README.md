@@ -38,9 +38,17 @@ pdfplumber kullanarak PDF'lerdeki notları, sütun kaymalarına bağışıklı b
 
 Devamsızlık için .xls dosyalarını Pandas ile okuma, Regex ile çöp verileri temizleme ve devamsızlıkları "Trend Analizi" (Time-Series) mantığıyla veritabanına kaydetme. (Not: Videoda bahsedilen mazeretli/mazeretsiz ters yazım hatası buradaki kodlarda giderilmiştir.)
 
-🔒 Bölüm 6: Risk Algoritması ve Yetkilendirme (Yakında)
+📁 Bölüm 6: Web Arayüzü ve Yetkilendirme (YAYINDA!)
 
-Not ve devamsızlık verilerinin birleştirilip "Erken Uyarı Risk Puanı" hesaplanması.
+Siyah terminal ekranından çıkış! Flask ile Dashboard kurulumu, werkzeug.security ile şifreli giriş (Login), Session yönetimi ve Role Dayalı Erişim Kontrolü (RBAC) ile güvenli web altyapısı.
+
+🔒 Bölüm 7: Admin Paneli ve Dosya Yükleme (Yakında)
+
+Siyah ekrana kod yazmaya son! Web arayüzü üzerinden PDF (Notlar) ve Excel (Devamsızlık) dosyalarını seçip doğrudan sisteme yükleme ve Python veri okuyucu scriptlerinin web'e entegrasyonu.
+
+🔒 Bölüm 8: Büyük Final - Risk Algoritması (Yakında)
+
+Toplanan not ve devamsızlık verilerinin formülize edilip "Erken Uyarı Risk Puanı" hesaplanması ve Dashboard üzerinde kırmızı/sarı/yeşil alarmların yakılması.
 
 ⚙️ Nasıl Çalıştırılır?
 
@@ -50,7 +58,13 @@ Bölüm 2 İçin: Bolum\_2\_Test\_Verisi\_Uretimi klasöründeki .html dosyasın
 
 Projeyi bilgisayarınızda çalıştırmak için gerekli kütüphaneleri kurmanız gerekmektedir. Terminalinize aşağıdaki komutu yazın:
 
-pip install pdfplumber pandas openpyxl lxml
+pip install pdfplumber pandas openpyxl lxml Flask werkzeug
+
+Daha sonra web sunucusunu başlatmak için proje dizininde:
+
+python app.py
+
+yazarak tarayıcınızdan http://127.0.0.1:5000 adresine gidebilirsiniz.
 
 💡 Not: Bu proje eğitim amaçlıdır. Lütfen gerçek öğrenci verileriyle çalışırken KVKK (Kişisel Verilerin Korunması Kanunu) kurallarına azami özen gösteriniz.
 
