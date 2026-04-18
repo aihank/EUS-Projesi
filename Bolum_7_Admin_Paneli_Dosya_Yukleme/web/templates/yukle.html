@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EUS | Veri Yükleme Merkezi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-900 text-slate-200">
+
+    <!-- Üst Menü -->
+    <nav class="bg-slate-800 border-b border-slate-700 p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <div class="text-xl font-bold text-sky-400 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved"></i> EUS
+                </div>
+                <div class="hidden md:flex gap-2">
+                    <a href="/"
+                        class="text-slate-400 hover:text-white hover:bg-slate-700 px-4 py-2 rounded-md font-medium transition duration-200"><i
+                            class="fa-solid fa-users mr-2"></i>Öğrenci Panosu</a>
+
+                    {% if session.rol == 'Admin' %}
+                    <a href="/yukle" class="bg-slate-700 text-white px-4 py-2 rounded-md font-medium"><i
+                            class="fa-solid fa-cloud-arrow-up mr-2 text-sky-400"></i>Veri Yükleme</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="/logout" class="text-red-400 hover:text-red-300 text-sm font-medium transition ml-2">Çıkış</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana İçerik -->
+    <div class="container mx-auto mt-10 px-4 max-w-5xl">
+        <h1 class="text-3xl font-bold text-white mb-2"><i class="fa-solid fa-server text-sky-400 mr-2"></i> Yönetim
+            Paneli</h1>
+        <p class="text-slate-400 mb-8">E-Okul'dan indirdiğiniz Not Çizelgelerini (PDF) ve Devamsızlık (Excel)
+            dosyalarını buradan sisteme aktarabilirsiniz.</p>
+
+        <!-- Sistem Mesajları -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div
+            class="mb-6 px-4 py-4 rounded-lg flex items-center gap-3 shadow-lg {% if category == 'success' %}bg-emerald-500/10 border-l-4 border-emerald-500 text-emerald-400{% else %}bg-red-500/10 border-l-4 border-red-500 text-red-400{% endif %}">
+            <i
+                class="fa-solid text-xl {% if category == 'success' %}fa-circle-check{% else %}fa-circle-exclamation{% endif %}"></i>
+            <span class="font-medium">{{ message }}</span>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- 1. PDF Yükleme Kartı -->
+            <div
+                class="bg-slate-800 p-8 rounded-xl border border-slate-700 shadow-2xl relative overflow-hidden group hover:border-sky-500/50 transition">
+                <div class="absolute -top-6 -right-6 p-4 text-sky-500/10 text-9xl group-hover:scale-110 transition"><i
+                        class="fa-solid fa-file-pdf"></i></div>
+                <h2 class="text-2xl font-bold text-white mb-2 relative z-10 flex items-center"><i
+                        class="fa-solid fa-file-pdf text-rose-400 mr-3 text-3xl"></i> Sınav Notları</h2>
+                <p class="text-slate-400 text-sm mb-6 relative z-10">E-Okul'dan PDF formatında indirdiğiniz ders not
+                    çizelgelerini yükleyin.</p>
+
+                <form action="/yukle" method="POST" enctype="multipart/form-data" class="relative z-10">
+                    <input type="hidden" name="islem_tipi" value="not_pdf">
+                    <div
+                        class="border-2 border-dashed border-slate-600 rounded-xl p-6 text-center hover:border-rose-400 transition cursor-pointer mb-6 bg-slate-900/50">
+                        <input type="file" name="dosya" accept=".pdf" required
+                            class="w-full text-slate-400 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-rose-500/10 file:text-rose-400 hover:file:bg-rose-500/20 cursor-pointer">
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-3 px-4 rounded-lg transition shadow-lg shadow-sky-600/30">
+                        <i class="fa-solid fa-upload"></i> PDF'i İşle
+                    </button>
+                </form>
+            </div>
+
+            <!-- 2. Excel Yükleme Kartı -->
+            <div
+                class="bg-slate-800 p-8 rounded-xl border border-slate-700 shadow-2xl relative overflow-hidden group hover:border-emerald-500/50 transition">
+                <div class="absolute -top-6 -right-6 p-4 text-emerald-500/10 text-9xl group-hover:scale-110 transition">
+                    <i class="fa-solid fa-file-excel"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-2 relative z-10 flex items-center"><i
+                        class="fa-solid fa-file-excel text-emerald-400 mr-3 text-3xl"></i> Devamsızlık Verisi</h2>
+                <p class="text-slate-400 text-sm mb-6 relative z-10">E-Okul'dan indirdiğiniz sahte .XLS dosyalarını
+                    yükleyin.</p>
+
+                <form action="/yukle" method="POST" enctype="multipart/form-data" class="relative z-10">
+                    <input type="hidden" name="islem_tipi" value="devam_excel">
+                    <div
+                        class="border-2 border-dashed border-slate-600 rounded-xl p-6 text-center hover:border-emerald-400 transition cursor-pointer mb-6 bg-slate-900/50">
+                        <input type="file" name="dosya" accept=".xls,.xlsx,.csv,.html" required
+                            class="w-full text-slate-400 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-emerald-500/10 file:text-emerald-400 hover:file:bg-emerald-500/20 cursor-pointer">
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg transition shadow-lg shadow-emerald-600/30">
+                        <i class="fa-solid fa-upload"></i> Excel'i İşle
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

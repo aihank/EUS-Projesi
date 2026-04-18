@@ -1,0 +1,5 @@
+Flask tabanlı Okul Erken Uyarı Sistemi (EUS) projemde Admin paneli için bir Dosya Yükleme (File Upload) sayfası tasarlamanı istiyorum.
+Bana Tailwind CSS ve FontAwesome ikonları ile tasarlanmış, çok şık, koyu tema bir yukle.html dosyası ver. İçinde iki adet büyük kart olsun:
+1. Kart: 'Sınav Notları (PDF)' yüklemek için. (islem_tipi="not_pdf")
+2. Kart: 'Devamsızlık Verisi (XLS)' yüklemek için. (islem_tipi="devam_excel")
+Formlar dosyayı '/yukle' adresine POST etsin. Dosya sadece HTML olsun, Python kısmını ben halledeceğim.
