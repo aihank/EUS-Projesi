@@ -42,7 +42,7 @@ Devamsızlık için .xls dosyalarını Pandas ile okuma, Regex ile çöp veriler
 
 Siyah terminal ekranından çıkış! Flask ile Dashboard kurulumu, werkzeug.security ile şifreli giriş (Login), Session yönetimi ve Role Dayalı Erişim Kontrolü (RBAC) ile güvenli web altyapısı.
 
-🔒 Bölüm 7: Admin Paneli ve Dosya Yükleme (Yakında)
+📁 Bölüm 7: Admin Paneli ve Dosya Yükleme (YAYINDA!)
 
 Siyah ekrana kod yazmaya son! Web arayüzü üzerinden PDF (Notlar) ve Excel (Devamsızlık) dosyalarını seçip doğrudan sisteme yükleme ve Python veri okuyucu scriptlerinin web'e entegrasyonu.
 
